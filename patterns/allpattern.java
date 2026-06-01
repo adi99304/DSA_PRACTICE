@@ -39,27 +39,39 @@ public class allpattern {
     }
     static void butterfly(int n ){
         for(int i=1;i<=n;i++){
-            if(i<=n/2){
-                for(int j =1;j<=i;j++){
+            
+            for(int j =1;j<=i;j++){
                 System.out.print("*");
             }
-            for(int k =i+1;k<=n-i;k++){
+            for(int k =1;k<=2*(n-i);k++){
                 System.out.print(" ");
             }
-            for(int y= n-i+1; y<=n;y++){
+            for(int y=1; y<=i;y++){
                 System.out.print("*");
             }
-            }
-            else{
-                for(int s =i;s>=1;s--){
-                    System.out.print("*");
-                }
-            //     for(int l=i-1;i<)
-            // }
-        }
             System.out.println();
         }
-    }
+        for(int i =n ;i>=1;i--){
+            for(int j =i;j>=1;j--){
+                System.out.print("*");
+
+            }
+            
+            for(int j =1;j<=2*(n-i);j++){
+                System.out.print(" ");
+            }
+            for(int h =i;h>=1;h--){
+                System.out.print("*");
+            }
+
+            System.out.println();
+
+
+        }
+        }
+            
+        
+    
     static void zeroone(int n){
             int k =1;
         for(int i=1;i<=n;i++ ){
@@ -76,13 +88,75 @@ public class allpattern {
             System.out.println();
         }
     }
+    static void rhombus(int n ){
+        for(int i =1;i<=n;i++){
+            for(int j=n-i;j>=1;j--){
+                System.out.print(" ");
+            }
+            for(int k =1;k<=n;k++){
+                System.out.print("* ");
+            }
+            System.out.println();
+        }
+    }
+    static void hollowrhombus(int n){
+
+        for(int i =1;i<=n;i++){
+            for(int j=n-i;j>=1;j--){
+                System.out.print(" ");
+            }
+            // int b=1;
+            for(int k =1;k<=n;k++){
+
+                if(i==1 || i==n || k==1||k==n){
+                System.out.print("*");
+            }
+            else{
+                System.out.print(" ");
+            }
+            
+            }
+            System.out.println();
+            
+        }
+    }
+    static void diamond(int n ){
+        for(int i =1;i<=n;i++){
+            for(int j=1;j<=n-i;j++){
+                System.out.print(" ");
+            }
+            for(int k =1 ;k<= 2*(i-1)+1;k++){
+                System.out.print("*");
+            }
+            for(int j=1;j<=n-i;j++){
+                System.out.print(" ");
+            }
+            System.out.println();
+        }
+        for(int i =n;i>=1;i--){
+            for(int j=1;j<=n-i;j++){
+                System.out.print(" ");
+            }
+            for(int k =1 ;k<= 2*(i-1)+1;k++){
+                System.out.print("*");
+            }
+            for(int j=1;j<=n-i;j++){
+                System.out.print(" ");
+            }
+            System.out.println();
+        }
+    }
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int a = sc.nextInt();
+        // int b= sc.nextInt();
         // star(a);
         // number(a);
         // floydtri(a);
         // zeroone(a);
-        butterfly(a);
+        // butterfly(a);
+        // rhombus(a);
+        // hollowrhombus(a);
+        diamond(a);
     }
 }
