@@ -20,8 +20,17 @@ public class shortest{
         d=Math.sqrt(x*x+y*y);
         System.out.println(d);
     }
+    static void substring(String s, int ei,int si){
+        String str ="";
+        for(int i =ei;i<si;i++){
+            str+=s.charAt(i);
+        }
+        System.out.println(str);
+    }
     public static void main(String[] args){
-        String s= " WNEENESENNN";
-        getpath(s);
+        String s= "WNEENESENNN";
+        // getpath(s);
+        System.out.println(s.substring(0,5));
+        substring(s,0,3);
     }
 }
