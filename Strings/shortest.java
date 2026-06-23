@@ -1,3 +1,4 @@
+package Strings;
 public class shortest{
     static void getpath(String str){
         double x=0;
