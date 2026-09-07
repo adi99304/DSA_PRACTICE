@@ -45,6 +45,16 @@ public class keyoccurences{
        return  contiguous(str, start, i+1, count);
         
     }
+static void towerofhanoi(int n ,String source,String helper,String dest){
+    if(n==1){
+         System.out.println("transfer disk " + n + "FROM " + source+" to " + dest);
+        return;
+    }
+    towerofhanoi(n-1,source,dest,helper);
+    System.out.println("transfer disk " + n + "FROM " + source+" to " + dest);
+    towerofhanoi(n-1, helper,source ,dest);
+
+}
     public static void main(String[] args) {
         // int[] arr= {3,2,4,5,6,2,7,2,2};
         // occurences(2, arr, 0, 0);
@@ -53,9 +63,10 @@ public class keyoccurences{
         //     "five", "six", "seven", "eight", "nine"
         // };
         // intotstring(194, words);
-        String str=  "abcab";
-        // lengthofstring(str, 0);
-        int  c=contiguous(str,0,0,0);
-        System.out.println(c);
+        // String str=  "abcab";
+        // // lengthofstring(str, 0);
+        // int  c=contiguous(str,0,0,0);
+        // System.out.println(c);
+        towerofhanoi(3, "S", "H", "D");
     }
 }

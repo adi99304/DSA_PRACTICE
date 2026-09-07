@@ -36,10 +36,40 @@ public class divideandconquer {
             arr[s]=temp[e]; 
         }
     }
+    static void quicksort(int[] arr , int si , int ei){
+        if(si>=ei){
+            return;
+        }
+            int pidx=partition(arr, si,ei);
+            quicksort(arr, si, pidx-1);
+            quicksort(arr, pidx+1, ei);
+
+    }
+    static int partition(int[] arr, int si,int pivot){
+        int i =si-1;
+        for(int j =si;j<pivot;j++){
+            if(arr[j] <= arr[pivot]){
+                i++;
+                swap(arr, i, j);
+            }
+        }
+        swap(arr, pivot, i+1);
+        return i+1;
+    }
+    static void swap(int[] arr,int a ,int b){
+       int temp=0;
+        temp=arr[a];
+        arr[a]= arr[b];
+        arr[b]= temp;
+    }
     public static void main(String[] args) {
-        int[] arr={6,3,9,5,2,8};
-        mergesort(arr, 0, arr.length-1);
-        for(int i =0;i<arr.length;i++){
+        int[] arr={6,3,9,8,2,5};
+        // mergesort(arr, 0, arr.length-1);
+        // for(int i =0;i<arr.length;i++){
+        //     System.out.print(arr[i]+" ,");
+        // }
+        quicksort(arr,0,arr.length-1);
+         for(int i =0;i<arr.length;i++){
             System.out.print(arr[i]+" ,");
         }
     }
